@@ -110,6 +110,23 @@ public class LinkedList {
             return temp;
         }
     }
+
+    public boolean set(int index,int value){
+        if(index < 0 || index >= length){
+            System.out.println("Node not present at index " + index);
+            return false; 
+        }else{
+            Node temp = head;
+            for(int i=0;i<length;i++){
+                if(i==index){
+                    temp.value = value;
+                    return true;
+                }
+                temp = temp.next;
+            }
+            return false;
+        }
+    }
     
 	
     public void printList() {
