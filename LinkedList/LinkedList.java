@@ -13,6 +13,10 @@ public class LinkedList {
         public Node(int value){
             this.value = value;
         }
+
+        public int getValue(){
+            return this.value;
+        }
     }
 
     public LinkedList(){
@@ -92,8 +96,21 @@ public class LinkedList {
             tail = null;
         }
         return temp;
-
     }
+
+    public Node get(int index){
+        if(index < 0 || index >= length){
+            System.out.println("Node not present at index " + index);
+            return null;
+        } else {
+            Node temp = head;
+            for(int i = 0; i < index; i++){
+                temp = temp.next;
+            }
+            return temp;
+        }
+    }
+    
 	
     public void printList() {
         Node temp = head;
@@ -123,5 +140,10 @@ public class LinkedList {
     public void getLength() {
         System.out.println("Length: " + length);
     }
+    public int getValueAt(int index){
+        Node node = get(index);
+        return node != null ? node.getValue() : -1; // or throw exception, based on design
+    }
+    
 
 }
