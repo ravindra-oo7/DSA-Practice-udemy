@@ -17,17 +17,17 @@ public class LinkedList {
 
     public LinkedList(){
 
-        this.head = null;
-        this.tail = null;
-        this.length = 0;
+        head = null;
+        tail = null;
+        length = 0;
     }
 
     public LinkedList(int value){
 
         Node newNode = new Node(value);
-        this.head = newNode;
-        this.tail = newNode;
-        this.length = 1;
+        head = newNode;
+        tail = newNode;
+        length = 1;
     }
 	//                                                          //
 	//                                                          //
@@ -37,19 +37,19 @@ public class LinkedList {
 
         Node newNode = new Node(value);
         
-        if(this.head == null){
-            this.head = newNode;
-            this.tail = newNode; 
+        if(head == null){
+            head = newNode;
+            tail = newNode; 
         }else{
             tail.next = newNode;
             tail = newNode;
         }
 
-        this.length++;
+        length++;
     }
 
     public Node removeLast(){
-        if(this.length == 0){
+        if(length == 0){
             return null;
         }
          Node temp = head;
@@ -82,21 +82,16 @@ public class LinkedList {
         length++;
     }
     public Node removeFirst(){
+        if(length==0) return null;
+        
         Node temp = head;
+        head = head.next;
+        temp.next = null;
+        length--;
         if(length==0){
-            return null;
-        }else if(length==1){
-            head = null;
             tail = null;
-            temp.next = null;
-            length--;
-            return temp;
-        }else{
-            head = head.next;
-            temp.next = null;
-            length--;
-            return temp;
         }
+        return temp;
 
     }
 	
