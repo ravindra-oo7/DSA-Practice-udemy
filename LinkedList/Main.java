@@ -2,14 +2,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LinkedList myLinkedList = new LinkedList();
+        LinkedList myLinkedList = new LinkedList(4);
         System.out.println("\nLinked List:");
         myLinkedList.printList();
-        myLinkedList.prepend(5);
-
+        myLinkedList.append(5);
         System.out.println("\nLinked List:");
         myLinkedList.printList();
 
+        myLinkedList.removeFirst();
+        System.out.println("\nLinked List:");
+        myLinkedList.printList();
+        myLinkedList.removeFirst();
+        System.out.println("\nLinked List:");
+        myLinkedList.printList();
         /*
             EXPECTED OUTPUT:
             ----------------

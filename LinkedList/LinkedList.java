@@ -75,12 +75,29 @@ public class LinkedList {
         if(length==0){
             head = newNode;
             tail = newNode;
-            length++;
         }else{
             newNode.next = head;
             head = newNode;
-            length++;
         }
+        length++;
+    }
+    public Node removeFirst(){
+        Node temp = head;
+        if(length==0){
+            return null;
+        }else if(length==1){
+            head = null;
+            tail = null;
+            temp.next = null;
+            length--;
+            return temp;
+        }else{
+            head = head.next;
+            temp.next = null;
+            length--;
+            return temp;
+        }
+
     }
 	
     public void printList() {
