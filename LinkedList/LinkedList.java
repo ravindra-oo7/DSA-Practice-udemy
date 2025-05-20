@@ -141,28 +141,22 @@ public class LinkedList {
         if(index<0 || index>length){
             System.out.println("Check your Index!! "+index);
             return false;
-        }else{
+        }
+        if(index==0){ 
+            prepend(value);
+            return true;
+        }
+        if(index==length){ 
+            append(value);
+            return true;
+        }
+        else{
             Node newNode = new Node(value);
-            Node temp = head;
-            if(index==0){ 
-                newNode.next = head;
-                head = newNode;
-                length++;
-                return true;
-            }else{
-                for(int i=0;i<index;i++){
-                    if(i==index-1){
-                        newNode.next = temp.next;
-                        temp.next = newNode;
-                        length++;
-                        return true;
-                    }
-                    else{
-                        temp=temp.next;
-                    }
-                }
-            }
-            return false;
+            Node temp = get(index-1);
+            newNode.next = temp.next;
+            temp.next = newNode;
+            length++;
+            return true;
         }
     }
     
