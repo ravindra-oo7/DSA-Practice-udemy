@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LinkedList myLinkedList = new LinkedList(23);
+        LinkedList myLinkedList = new LinkedList(12);
         myLinkedList.append(5);
         myLinkedList.append(6);
         myLinkedList.append(7);
@@ -12,7 +12,7 @@ public class Main {
         System.out.println("\nLinked List:");
         myLinkedList.printList();
 
-        System.out.println(myLinkedList.set(4,13));
+        System.out.println(myLinkedList.insert(0,17));
 
         
         System.out.println("\nLinked List:");
