@@ -12,7 +12,7 @@ public class Main {
         System.out.println("\nLinked List:");
         myLinkedList.printList();
 
-        System.out.println(myLinkedList.insert(4,17));
+        System.out.println(myLinkedList.remove(4));
 
         
         System.out.println("\nLinked List:");

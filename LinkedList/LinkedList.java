@@ -159,6 +159,43 @@ public class LinkedList {
             return true;
         }
     }
+
+    public Node remove(int index){
+        
+        if(index<0 || index>=length) return null;
+
+        if(head==null) return null;
+
+        if(length==1) 
+        {
+            Node temp = head;
+            head = null;
+            tail = null;
+            length--;
+            return temp;
+        } 
+        if(index == 0){
+            Node temp = head;
+            head = head.next;
+            length--;
+            return temp;
+        }
+
+        if(index == length-1){
+            Node temp = get(index-1);
+            tail = temp;
+            tail.next = null;
+            length--;
+            return temp;
+        }
+
+        Node temp = get(index-1);
+        Node removedNode = temp.next;
+        temp.next = temp.next.next;
+        temp.next.next = null;
+        length--;
+        return removedNode;
+    }
     
 	
     public void printList() {
