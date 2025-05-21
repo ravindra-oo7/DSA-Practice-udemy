@@ -3,16 +3,16 @@ public class Main {
     public static void main(String[] args) {
 
         LinkedList myLinkedList = new LinkedList(12);
-        myLinkedList.append(5);
-        myLinkedList.append(6);
-        myLinkedList.append(7);
-        myLinkedList.append(8);
+        myLinkedList.append(22);
+        myLinkedList.append(45);
+        myLinkedList.append(66);
+
 
         
         System.out.println("\nLinked List:");
         myLinkedList.printList();
 
-        System.out.println(myLinkedList.remove(4));
+        myLinkedList.reverse();
 
         
         System.out.println("\nLinked List:");
